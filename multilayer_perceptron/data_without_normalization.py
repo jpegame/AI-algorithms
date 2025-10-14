@@ -1,6 +1,5 @@
 DATA_WITHOUT_NORMALIZATION = [
     {"id": 1, "idade": 25, "sexo": "M", "altura_cm": 178, "peso_kg": 74, "nivel_atividade": "moderado", "tipo_corporal": "mesomorfo", "percentual_gordura": 14.2},
-    {"id": 2, "idade": 32, "sexo": "F", "altura_cm": 165, "peso_kg": 62, "nivel_atividade": "leve", "tipo_corporal": "endomorfo", "percentual_gordura": 27.5},
     {"id": 3, "idade": 41, "sexo": "M", "altura_cm": 180, "peso_kg": 90, "nivel_atividade": "baixo", "tipo_corporal": "endomorfo", "percentual_gordura": 26.8},
     {"id": 4, "idade": 29, "sexo": "F", "altura_cm": 170, "peso_kg": 68, "nivel_atividade": "alto", "tipo_corporal": "mesomorfo", "percentual_gordura": 21.0},
     {"id": 5, "idade": 22, "sexo": "M", "altura_cm": 182, "peso_kg": 80, "nivel_atividade": "alto", "tipo_corporal": "ectomorfo", "percentual_gordura": 12.7},
