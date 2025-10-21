@@ -1,9 +1,9 @@
-from data_without_normalization import DATA_WITHOUT_NORMALIZATION
-from normalize_data import normalize, max_percentual_gordura, normalize_input
+from normalize_data import get_normalized_data
 from neural_network import NeuralNetwork
 
 def main():
-    x, y = normalize(DATA_WITHOUT_NORMALIZATION)
+    print("Executing normalization for data...")
+    x,y = get_normalized_data('train.csv')
     if len(x) == 0:
         return
     
@@ -12,20 +12,17 @@ def main():
     output_size = len(y[0])
     learning_rate = 0.1
 
+    print("Training neural network...")
     network = NeuralNetwork(x, y, input_size, hidden_size, output_size, learning_rate)
-    network.train(5_000)
+    network.train(100)
 
+    print('Weights in hidden input layer:')
+    print(network.weights_input_hidden)
 
-    entrada = [
-        {"idade": 20, "sexo": "M", "altura_cm": 172, "peso_kg": 90, "nivel_atividade": "baixo", "tipo_corporal": "endomorfo"},
-        {"idade": 30, "sexo": "M", "altura_cm": 172, "peso_kg": 120, "nivel_atividade": "baixo", "tipo_corporal": "endomorfo"},
-        {"idade": 10, "sexo": "M", "altura_cm": 152, "peso_kg": 80, "nivel_atividade": "baixo", "tipo_corporal": "endomorfo"},
-        {"idade": 10, "sexo": "M", "altura_cm": 152, "peso_kg": 40, "nivel_atividade": "baixo", "tipo_corporal": "endomorfo"},
-    ]
+    print('=' * 50)
 
-    for x_new in entrada:
-        y_pred = network.predict(normalize_input(x_new))
-        print("Predição:", y_pred[0] * max_percentual_gordura)
+    print('Weights in hidden output layer: ')
+    print(network.weights_hidden_output)
 
 if __name__ == "__main__":
     main()

@@ -64,8 +64,9 @@ class NeuralNetwork:
 
     def train(self, num_epochs: int):
         for epoch in range(num_epochs):
+            print(f'Se passou {epoch} época')
             self.feed_forward()
             self.backward()
-            if epoch % int(num_epochs / 10) == 0:
-                loss = mean_squared_error(self.y, self.predicted_output)
-                print(loss)
+
+        loss = mean_squared_error(self.y, self.predicted_output)
+        print(f'MSE: {loss}')
